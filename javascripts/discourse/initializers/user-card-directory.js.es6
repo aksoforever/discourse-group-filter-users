@@ -8,8 +8,6 @@ export default {
   name: "user-card-directory",
   initialize(container) {
     // This component provides a responsive template
-    // Delete the core mobile one
-    delete Ember.TEMPLATES["mobile/users"];
 
     withPluginApi("0.8.7", api => {
       api.modifyClass("route:users", {
