@@ -1,5 +1,5 @@
 {{#d-section pageClass="users"}}
-  {{#load-more selector=".user-card-directory .user-card-container" action=(action "loadMore")}}
+  {{#load-more selector=".directory .user-card-container" action=(action "loadMore")}}
     <div class="container">
       <div class="users-directory directory">
         {{plugin-outlet name="users-top" connectorTagName='div' args=(hash model=model)}}
