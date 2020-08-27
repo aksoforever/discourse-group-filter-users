@@ -1,8 +1,7 @@
 {
-  "name": "User Card Directory",
-  "about_url": "https://meta.discourse.org/t/user-card-directory/144479",
+  "name": "Add group filter to users",
+  "about_url": null,
   "license_url": null,
-  "authors": "David Taylor",
   "minimum_discourse_version": "2.5.0.beta2",
   "assets": {
   },
