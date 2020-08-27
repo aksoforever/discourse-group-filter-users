@@ -8,19 +8,9 @@ export default {
   name: "user-card-directory",
   initialize(container) {
     // This component provides a responsive template
-    // Delete the core mobile one
-    delete Ember.TEMPLATES["mobile/users"];
 
     withPluginApi("0.8.7", api => {
-      api.modifyClass("route:users", {
-        resetController(controller, isExiting) {
-          this._super(...arguments);
-          if (isExiting) {
-            controller.set("cachedUserCardInfo", {});
-          }
-        }
-      });
-
+      
       api.modifyClass("controller:users", {
         cachedUserCardInfo: null,
 
@@ -28,17 +18,7 @@ export default {
           this.set("cachedUserCardInfo", {});
           this._super(...arguments);
         },
-
-        stats: [
-          { name: "likes_received", icon: "heart" },
-          { name: "likes_given", icon: "heart" },
-          { name: "topic_count" },
-          { name: "post_count" },
-          { name: "topics_entered" },
-          { name: "posts_read" },
-          { name: "days_visited" }
-        ],
-
+    
         @discourseComputed("site.groups")
         availableGroups(groups) {
           return groups
