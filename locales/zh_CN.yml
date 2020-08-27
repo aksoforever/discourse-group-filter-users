@@ -1,0 +1,4 @@
+zh_CN:
+  theme_metadata:
+    description: 增加组筛选在users页面
+  filter_by_group: 按组筛选
