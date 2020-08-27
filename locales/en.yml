@@ -2,4 +2,4 @@ en:
   theme_metadata:
     description: Replaces the user directory with a grid of user cards
   filter_by_group: filter by group
-  users_center_name: Users Center
+  users_center_name: All Users
