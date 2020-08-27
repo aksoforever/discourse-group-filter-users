@@ -10,7 +10,15 @@ export default {
     // This component provides a responsive template
 
     withPluginApi("0.8.7", api => {
-      
+      api.modifyClass("route:users", {
+        resetController(controller, isExiting) {
+          this._super(...arguments);
+          if (isExiting) {
+            controller.set("cachedUserCardInfo", {});
+          }
+        }
+      });
+
       api.modifyClass("controller:users", {
         cachedUserCardInfo: null,
 
@@ -18,7 +26,7 @@ export default {
           this.set("cachedUserCardInfo", {});
           this._super(...arguments);
         },
-    
+
         @discourseComputed("site.groups")
         availableGroups(groups) {
           return groups
